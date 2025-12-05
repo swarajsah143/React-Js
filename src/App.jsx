@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar";
 
-
 function App() {
   const [cards, setCards] = useState([]);
   const getData = async () => {
@@ -12,7 +11,7 @@ function App() {
     setCards(data);
     console.log(data);
   };
-  
+
   useEffect(() => {
     const fetchData = async () => {
       await getData();
@@ -22,15 +21,19 @@ function App() {
   }, []);
   return (
     <>
-    <Navbar/>
+      <Navbar />
 
       <div className="container">
         {cards.map((card) => {
-           return<div className="card">
-            <h1>{card.title}</h1>
-            <p>{card.body}</p>
-            <span>By User: {card.userId}</span>
-          </div>;
+          // here card means mappeed array one by one, this can be any variable
+          return (
+            <div className="card">
+              <h2>{card.title}</h2>
+              <p>{card.body}</p>
+              <span>By User: {card.userId}</span>
+            </div>
+          );
+          // if we use {} inside arrow funt then we have to use return()
         })}
       </div>
     </>
