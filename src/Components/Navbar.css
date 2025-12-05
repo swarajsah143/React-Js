@@ -1,0 +1,21 @@
+
+nav,
+ul {
+  display: flex;
+}
+nav {
+  background-color: antiquewhite;
+  height: 5vh;
+  margin-bottom: 34px;
+}
+ul {
+  align-items: center;
+  justify-content: start;
+  padding-left: 10px;
+  gap: 4rem;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+li {
+  list-style-type: none;
+}

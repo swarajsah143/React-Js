@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /* height: 800px;
+    width: 800px; */
+  border: 2px solid black;
+  padding: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.cards {
+  height: 200px;
+  width: 300px;
+  background-color: skyblue;
+  color: black;
+  font-weight: bolder;
+  padding: 20px;
+}
+.title {
+  margin-bottom: 20px;
+}
