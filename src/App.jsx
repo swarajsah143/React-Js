@@ -4,6 +4,25 @@ import Navbar from "./Components/Navbar";
 
 function App() {
   const [cards, setCards] = useState([]);
+  // const [change, setChange] = useState("");
+  const [form, setForm] = useState({})
+  // const [updateContent, setUpdateContent] = useState('')
+  const handleTouch = () => {
+    alert("I am in");
+  };
+  const handleClick = () => {
+    alert("I got clciked");
+    // setUpdateContent(change)
+
+  };
+  const handleChange = (e) => {
+    //  setChange(form.Name);
+     setForm({...form,[e.target.name]:e.target.value})
+
+
+    // console.log(e.target.value)
+    
+  };
   const getData = async () => {
     const URL = "https://jsonplaceholder.typicode.com/posts";
     let response = await fetch(URL);
@@ -22,6 +41,13 @@ function App() {
   return (
     <>
       <Navbar />
+      <div className="touchme" onMouseOver={handleTouch}>
+      {/* {updateContent} */} I am div,touch me to alert
+      </div>
+      <button onClick={handleClick}>Click me to update</button>
+      <br />
+      <input type="text" name="Name" value={form.Name?form.Name:"Name:"} onChange={handleChange} />
+      <input type="text" name="phone" value={form.phone?form.phone:"Phone:"} onChange={handleChange} />
 
       <div className="container">
         {cards.map((card) => {
